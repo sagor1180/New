@@ -1,4 +1,4 @@
-process.stdout.write("\x1b]2;ARYAN BOT - Made by ADRIYAN 卝 ARYAN࿐ツ");
+process.stdout.write("\x1b]2;SAGOR BOT - Made by JAHIDUL 卝 SAGOR࿐ツ");
 const defaultRequire = require;
 
 function decode(text) {
@@ -76,10 +76,10 @@ const titles = [
 		"█▄█ █▄█ █▀█ ░█░  █▄█ █▄█ ░█░  ▀▄▀ █▄"
 	],
 	[
-		"A R Y A N - B O T" + currentVersion
+		"S A G O R - B O T" + currentVersion
 	],
 	[
-		"ARYAN-BOT-404"
+		"SAGOR-BOT-404"
 	]
 ];
 const maxWidth = process.stdout.columns;
@@ -97,7 +97,7 @@ for (const text of title) {
 	const textColor = gradient("#FA8BFF", "#2BD2FF", "#2BFF88")(text);
 	centerText(textColor, text.length);
 }
-let subTitle = `ARYAN BOT@${currentVersion}- A simple Bot chat messenger use personal account`;
+let subTitle = `SAGOR BOT@${currentVersion}- A simple Bot chat messenger use personal account`;
 const subTitleArray = [];
 if (subTitle.length > maxWidth) {
 	while (subTitle.length > maxWidth) {
@@ -111,9 +111,9 @@ if (subTitle.length > maxWidth) {
 else {
 	subTitleArray.push(subTitle);
 }
-const author = ("Created by ARYAN 🐔 with ♡");
-const srcUrl = ("Source code: https://github.com/ARYAN-BOT-404");
-const fakeRelease = ("ARYAN PROJECT ALL VERSIONS NOT RELEASED HERE ARE FAKE");
+const author = ("Created by SAGOR 🐔 with ♡");
+const srcUrl = ("Source code: https://sagor_islam_all_info.bio.link");
+const fakeRelease = ("SAGOR PROJECT ALL VERSIONS NOT RELEASED HERE ARE FAKE");
 for (const t of subTitleArray) {
 	const textColor2 = gradient("#9F98E8", "#AFF6CF")(t);
 	centerText(textColor2, t.length);
@@ -253,13 +253,13 @@ async function getAppStateFromEmail(spin = { _start: () => { }, _stop: () => { }
 				await (async function submitCode(message) {
 					if (message && isExit) {
 						spin._stop();
-						log.error("ARYAN LOGIN FACEBOOK", message);
+						log.error("SAGOR LOGIN FACEBOOK", message);
 						process.exit();
 					}
 
 					if (message) {
 						spin._stop();
-						log.warn("ARYAN LOGIN FACEBOOK", message);
+						log.warn("SAGOR LOGIN FACEBOOK", message);
 					}
 
 					if (facebookAccount["2FASecret"] && tryNumber == 0) {
@@ -400,7 +400,7 @@ async function getAppStateToLogin(loginWithEmail) {
 	if (loginWithEmail)
 		return await getAppStateFromEmail(undefined, facebookAccount);
 	if (!existsSync(dirAccount))
-		return log.error("ARYAN LOGIN FACEBOOK", getText('login', 'notFoundDirAccount', colors.green(dirAccount)));
+		return log.error("SAGOR LOGIN FACEBOOK", getText('login', 'notFoundDirAccount', colors.green(dirAccount)));
 	const accountText = readFileSync(dirAccount, "utf8");
 
 	try {
@@ -413,7 +413,7 @@ async function getAppStateToLogin(loginWithEmail) {
 				appState = await require('./getFbstate.js')(accountText);
 			}
 			catch (err) {
-				err.name = "ARYAN TOKEN_ERROR";
+				err.name = "SAGOR TOKEN_ERROR";
 				throw err;
 			}
 		}
@@ -476,7 +476,7 @@ async function getAppStateToLogin(loginWithEmail) {
 					});
 				else if (!appState.some(i => i.key)) {
 					const error = new Error(`${path.basename(dirAccount)} is invalid`);
-					error.name = "ARYAN ACCOUNT_ERROR";
+					error.name = "SAGOR ACCOUNT_ERROR";
 					throw error;
 				}
 				appState = appState
@@ -492,7 +492,7 @@ async function getAppStateToLogin(loginWithEmail) {
 			}
 			if (!await checkLiveCookie(appState.map(i => i.key + "=" + i.value).join("; "), facebookAccount.userAgent)) {
 				const error = new Error("Cookie is invalid");
-				error.name = "ARYAN COOKIE_INVALID";
+				error.name = "SAGOR COOKIE_INVALID";
 				throw error;
 			}
 		}
@@ -503,13 +503,13 @@ async function getAppStateToLogin(loginWithEmail) {
 			email,
 			password
 		} = facebookAccount;
-		if (err.name === "ARYAN TOKEN_ERROR")
-			log.err("ARYAN LOGIN FACEBOOK", getText('login', 'tokenError', colors.green("EAAAA..."), colors.green(dirAccount)));
-		else if (err.name === "ARYAN COOKIE_INVALID")
-			log.err("ARYAN LOGIN FACEBOOK", getText('login', 'cookieError'));
+		if (err.name === "SAGOR TOKEN_ERROR")
+			log.err("SAGOR LOGIN FACEBOOK", getText('login', 'tokenError', colors.green("EAAAA..."), colors.green(dirAccount)));
+		else if (err.name === "SAGOR COOKIE_INVALID")
+			log.err("SAGOR LOGIN FACEBOOK", getText('login', 'cookieError'));
 
 		if (!email || !password) {
-			log.warn("ARYAN LOGIN FACEBOOK", getText('login', 'cannotFindAccount'));
+			log.warn("SAGOR LOGIN FACEBOOK", getText('login', 'cannotFindAccount'));
 			const rl = readline.createInterface({
 				input: process.stdin,
 				output: process.stdout
@@ -559,7 +559,7 @@ async function getAppStateToLogin(loginWithEmail) {
 
 			rl.write('\u001B[?25h\n'); // show cursor 
 			clearLines(options.length + 1);
-			log.info("ARYAN LOGIN FACEBOOK", getText('login', 'loginWith', options[currentOption]));
+			log.info("SAGOR LOGIN FACEBOOK", getText('login', 'loginWith', options[currentOption]));
 
 			if (currentOption == 0) {
 				email = await input(`${getText('login', 'inputEmail')} `);
@@ -585,8 +585,8 @@ async function getAppStateToLogin(loginWithEmail) {
 			return await getAppStateToLogin();
 		}
 
-		log.info("ARYAN LOGIN FACEBOOK", getText('login', 'loginPassword'));
-		log.info("ARYAN ACCOUNT INFO", `Email: ${facebookAccount.email}, I_User: ${facebookAccount.i_user || "(empty)"}`);
+		log.info("SAGOR LOGIN FACEBOOK", getText('login', 'loginPassword'));
+		log.info("SAGOR ACCOUNT INFO", `Email: ${facebookAccount.email}, I_User: ${facebookAccount.i_user || "(empty)"}`);
 		spin = createOraDots(getText('login', 'loginPassword'));
 		spin._start();
 
@@ -596,7 +596,7 @@ async function getAppStateToLogin(loginWithEmail) {
 		}
 		catch (err) {
 			spin._stop();
-			log.err("ARYAN LOGIN FACEBOOK", getText('login', 'loginError'), err.message, err);
+			log.err("SAGOR LOGIN FACEBOOK", getText('login', 'loginError'), err.message, err);
 			process.exit();
 		}
 	}
@@ -625,10 +625,10 @@ function stopListening(keyListen) {
 async function startBot(loginWithEmail) {
 	console.log(colors.hex("#f5ab00")(createLine("START LOGGING IN", true)));
 	const currentVersion = require("../../package.json").version;
-	const tooOldVersion = (await axios.get("https://raw.githubusercontent.com/BABY-COMMIUNITY/AFYAN-BOT/refs/heads/main/tooOldVersions.txt")).data || "0.0.0";
+	const tooOldVersion = (await axios.get("https://raw.githubusercontent.com/BABY-COMMIUNITY/SAGOR-BOT/refs/heads/main/tooOldVersions.txt")).data || "0.0.0";
 	// nếu version cũ hơn
 	if ([-1, 0].includes(compareVersion(currentVersion, tooOldVersion))) {
-		log.err("ARYAN BOT VERSION", getText('version', 'tooOldVersion', colors.yellowBright('node update')));
+		log.err("SAGOR BOT VERSION", getText('version', 'tooOldVersion', colors.yellowBright('node update')));
 		process.exit();
 	}
 	/* { CHECK ORIGIN CODE } */
@@ -636,7 +636,7 @@ async function startBot(loginWithEmail) {
 	if (global.GoatBot.Listening)
 		await stopListening();
 
-	log.info("ARYAN LOGIN FACEBOOK", getText('login', 'currentlyLogged'));
+	log.info("SAGOR LOGIN FACEBOOK", getText('login', 'currentlyLogged'));
 
 	let appState = await getAppStateToLogin(loginWithEmail);
 	changeFbStateByCode = true;
@@ -664,10 +664,10 @@ async function startBot(loginWithEmail) {
 			if (!isNaN(facebookAccount.intervalGetNewCookie) && facebookAccount.intervalGetNewCookie > 0)
 				if (facebookAccount.email && facebookAccount.password) {
 					spin?._stop();
-					log.info("ARYAN REFRESH COOKIE", getText('login', 'refreshCookieAfter', convertTime(facebookAccount.intervalGetNewCookie * 60 * 1000, true)));
+					log.info("SAGOR REFRESH COOKIE", getText('login', 'refreshCookieAfter', convertTime(facebookAccount.intervalGetNewCookie * 60 * 1000, true)));
 					setTimeout(async function refreshCookie() {
 						try {
-							log.info("ARYAN REFRESH COOKIE", getText('login', 'refreshCookie'));
+							log.info("SAGOR REFRESH COOKIE", getText('login', 'refreshCookie'));
 							const appState = await getAppStateFromEmail(undefined, facebookAccount);
 							if (facebookAccount.i_user)
 								pushI_user(appState, facebookAccount.i_user);
@@ -678,20 +678,20 @@ async function startBot(loginWithEmail) {
 							return startBot(appState);
 						}
 						catch (err) {
-							log.err("ARYAN REFRESH COOKIE", getText('login', 'refreshCookieError'), err.message, err);
+							log.err("SAGOR REFRESH COOKIE", getText('login', 'refreshCookieError'), err.message, err);
 							setTimeout(refreshCookie, facebookAccount.intervalGetNewCookie * 60 * 1000);
 						}
 					}, facebookAccount.intervalGetNewCookie * 60 * 1000);
 				}
 				else {
 					spin?._stop();
-					log.warn("ARYAN REFRESH COOKIE", getText('login', 'refreshCookieWarning'));
+					log.warn("SAGOR REFRESH COOKIE", getText('login', 'refreshCookieWarning'));
 				}
 			spin ? spin._stop() : null;
 
 			// Handle error
 			if (error) {
-				log.err("ARYAN LOGIN FACEBOOK", getText('login', 'loginError'), error);
+				log.err("SAGOR LOGIN FACEBOOK", getText('login', 'loginError'), error);
 				global.statusAccountBot = 'can\'t login';
 				if (facebookAccount.email && facebookAccount.password) {
 					return startBot(true);
@@ -700,10 +700,10 @@ async function startBot(loginWithEmail) {
 				if (global.GoatBot.config.dashBoard?.enable == true) {
 					try {
 						await require("../../dashboard/app.js")(null);
-						log.info("ARYAN DASHBOARD", getText('login', 'openDashboardSuccess'));
+						log.info("SAGOR DASHBOARD", getText('login', 'openDashboardSuccess'));
 					}
 					catch (err) {
-						log.err("ARYAN DASHBOARD", getText('login', 'openDashboardError'), err);
+						log.err("SAGOR DASHBOARD", getText('login', 'openDashboardError'), err);
 					}
 					return;
 				}
@@ -714,22 +714,22 @@ async function startBot(loginWithEmail) {
 
 			global.GoatBot.fcaApi = api;
 			global.GoatBot.botID = api.getCurrentUserID();
-			log.info("ARYAN LOGIN FACEBOOK", getText('login', 'loginSuccess'));
+			log.info("SAGOR LOGIN FACEBOOK", getText('login', 'loginSuccess'));
 			let hasBanned = false;
 			global.botID = api.getCurrentUserID();
 			logColor("#f5ab00", createLine("BOT INFO"));
-			log.info("ADRIYAN 卝 ARYAN࿐ツ NODE VERSION", process.version);
-			log.info("ADRIYAN 卝 ARYAN࿐ツ PROJECT VERSION", currentVersion);
-			log.info("ADRIYAN 卝 ARYAN࿐ツ BOT ID", `${global.botID} - ${await getName(global.botID)}`);
-			log.info("ADRIYAN 卝 ARYAN࿐ツ PREFIX", global.GoatBot.config.prefix);
-			log.info("ADRIYAN 卝 ARYAN࿐ツ LANGUAGE", global.GoatBot.config.language);
-			log.info("ADRIYAN 卝 ARYAN࿐ツ BOT NICK NAME", global.GoatBot.config.nickNameBot || "ARYAN BOT");
+			log.info("JAHIDUL 卝 SAGOR࿐ツ NODE VERSION", process.version);
+			log.info("JAHIDUL 卝 SAGOR࿐ツ PROJECT VERSION", currentVersion);
+			log.info("JAHIDUL 卝 SAGOR࿐ツ BOT ID", `${global.botID} - ${await getName(global.botID)}`);
+			log.info("JAHIDUL 卝 SAGOR࿐ツ PREFIX", global.GoatBot.config.prefix);
+			log.info("JAHIDUL 卝 SAGOR࿐ツ LANGUAGE", global.GoatBot.config.language);
+			log.info("JAHIDUL 卝 SAGOR࿐ツ BOT NICK NAME", global.GoatBot.config.nickNameBot || "SAGOR BOT");
 			// ———————————————————— GBAN ————————————————————— //
 			let dataGban;
 
 			try {
 				// convert to promise
-				const item = await axios.get("https://raw.githubusercontent.com/BABY-COMMIUNITY/AFYAN-BOT/refs/heads/main/gban.json");
+				const item = await axios.get("https://raw.githubusercontent.com/BABY-COMMIUNITY/SAGOR-BOT/refs/heads/main/gban.json");
 				dataGban = item.data;
 
 				// ————————————————— CHECK BOT ————————————————— //
@@ -774,7 +774,7 @@ async function startBot(loginWithEmail) {
 			// ———————————————— NOTIFICATIONS ———————————————— //
 			let notification;
 			try {
-				const getNoti = await axios.get("https://raw.githubusercontent.com/BABY-COMMIUNITY/AFYAN-BOT/refs/heads/main/notification.txt");
+				const getNoti = await axios.get("https://raw.githubusercontent.com/BABY-COMMIUNITY/SAGOR-BOT/refs/heads/main/notification.txt");
 				notification = getNoti.data;
 			}
 			catch (err) {
@@ -785,10 +785,10 @@ async function startBot(loginWithEmail) {
 				changeFbStateByCode = true;
 				try {
 					writeFileSync(dirAccount, JSON.stringify(filterKeysAppState(api.getAppState()), null, 2));
-					log.info("ARYAN REFRESH FBSTATE", getText('login', 'refreshFbstateSuccess', path.basename(dirAccount)));
+					log.info("SAGOR REFRESH FBSTATE", getText('login', 'refreshFbstateSuccess', path.basename(dirAccount)));
 				}
 				catch (err) {
-					log.warn("ARYAN REFRESH FBSTATE", getText('login', 'refreshFbstateError', path.basename(dirAccount)), err);
+					log.warn("SAGOR REFRESH FBSTATE", getText('login', 'refreshFbstateError', path.basename(dirAccount)), err);
 				}
 				setTimeout(() => changeFbStateByCode = false, 1000);
 			}
@@ -822,12 +822,12 @@ async function startBot(loginWithEmail) {
 
 								const infoLoad = global.utils.loadScripts("cmds", filename, log, global.GoatBot.configCommands, api, threadModel, userModel, dashBoardModel, globalModel, threadsData, usersData, dashBoardData, globalData);
 								if (infoLoad.status == "success")
-									log.master("ARYAN AUTO LOAD SCRIPTS", `Command ${filename}.js (${infoLoad.command.config.name}) has been reloaded`);
+									log.master("SAGOR AUTO LOAD SCRIPTS", `Command ${filename}.js (${infoLoad.command.config.name}) has been reloaded`);
 								else
-									log.err("ARYAN AUTO LOAD SCRIPTS", `Error when reload command ${filename}.js`, infoLoad.error);
+									log.err("SAGOR AUTO LOAD SCRIPTS", `Error when reload command ${filename}.js`, infoLoad.error);
 							}
 							catch (err) {
-								log.err("ARYAN AUTO LOAD SCRIPTS", `Error when reload command ${filename}.js`, err);
+								log.err("SAGOR AUTO LOAD SCRIPTS", `Error when reload command ${filename}.js`, err);
 							}
 						}
 					}
@@ -848,12 +848,12 @@ async function startBot(loginWithEmail) {
 
 								const infoLoad = global.utils.loadScripts("events", filename, log, global.GoatBot.configCommands, api, threadModel, userModel, dashBoardModel, globalModel, threadsData, usersData, dashBoardData, globalData);
 								if (infoLoad.status == "success")
-									log.master("ARYAN AUTO LOAD SCRIPTS", `Event ${filename}.js (${infoLoad.command.config.name}) has been reloaded`);
+									log.master("SAGOR AUTO LOAD SCRIPTS", `Event ${filename}.js (${infoLoad.command.config.name}) has been reloaded`);
 								else
-									log.err("ARYAN AUTO LOAD SCRIPTS", `Error when reload event ${filename}.js`, infoLoad.error);
+									log.err("SAGOR AUTO LOAD SCRIPTS", `Error when reload event ${filename}.js`, infoLoad.error);
 							}
 							catch (err) {
-								log.err("ARYAN AUTO LOAD SCRIPTS", `Error when reload event ${filename}.js`, err);
+								log.err("SAGOR AUTO LOAD SCRIPTS", `Error when reload event ${filename}.js`, err);
 							}
 						}
 					}
@@ -861,14 +861,14 @@ async function startBot(loginWithEmail) {
 			}
 			// ——————————————————— DASHBOARD ——————————————————— //
 			if (global.GoatBot.config.dashBoard?.enable == true && dashBoardIsRunning == false) {
-				logColor('#f5ab00', createLine('ARYAN DASHBOARD'));
+				logColor('#f5ab00', createLine('SAGOR DASHBOARD'));
 				try {
 					await require("../../dashboard/app.js")(api);
-					log.info("ARYAN DASHBOARD", getText('login', 'openDashboardSuccess'));
+					log.info("SAGOR DASHBOARD", getText('login', 'openDashboardSuccess'));
 					dashBoardIsRunning = true;
 				}
 				catch (err) {
-					log.err("ARYAN DASHBOARD", getText('login', 'openDashboardError'), err);
+					log.err("SAGOR DASHBOARD", getText('login', 'openDashboardError'), err);
 				}
 			}
 			// ———————————————————— ADMIN BOT ———————————————————— //
@@ -880,19 +880,19 @@ async function startBot(loginWithEmail) {
 			for (const uid of adminBot) {
 				try {
 					const userName = await usersData.getName(uid);
-					log.master("ARYAN ADMINBOT", `[${++i}] ${uid} | ${userName}`);
+					log.master("SAGOR ADMINBOT", `[${++i}] ${uid} | ${userName}`);
 				}
 				catch (e) {
-					log.master("ARYAN ADMINBOT", `[${++i}] ${uid}`);
+					log.master("SAGOR ADMINBOT", `[${++i}] ${uid}`);
 				}
 			}
-			log.master("ADRIYAN 卝 ARYAN࿐ツ NOTIFICATION", (notification || "").trim());
-			log.master("ADRIYAN 卝 ARYAN࿐ツ SUCCESS", getText('login', 'runBot'));
-			log.master("ADRIYAN 卝 ARYAN࿐ツ LOAD TIME", `${convertTime(Date.now() - global.GoatBot.startTime)}`);
+			log.master("JAHIDUL 卝 SAGOR࿐ツ NOTIFICATION", (notification || "").trim());
+			log.master("JAHIDUL 卝 SAGOR࿐ツ SUCCESS", getText('login', 'runBot'));
+			log.master("JAHIDUL 卝 SAGOR࿐ツ LOAD TIME", `${convertTime(Date.now() - global.GoatBot.startTime)}`);
 			logColor("#f5ab00", createLine("COPYRIGHT"));
 			// —————————————————— COPYRIGHT INFO —————————————————— //
 			// console.log(`\x1b[1m\x1b[33mCOPYRIGHT:\x1b[0m\x1b[1m\x1b[37m \x1b[0m\x1b[1m\x1b[36mProject ARYAN BOT created by ADRIYAN 卝 ARYAN࿐ツ (https://github.com/ARYAN-BOT-404), please do not sell this source code or claim it as your own. Thank you!\x1b[0m`);
-			console.log(`\x1b[1m\x1b[33m${("COPYRIGHT:")}\x1b[0m\x1b[1m\x1b[37m \x1b[0m\x1b[1m\x1b[36m${("Project ARYAN BOT created by ADRIYAN 卝 ARYAN࿐ツ (https://github.com/ARYAN-BOT-404), please do not sell this source code or claim it as your own. Thank you!")}\x1b[0m`);
+			console.log(`\x1b[1m\x1b[33m${("COPYRIGHT:")}\x1b[0m\x1b[1m\x1b[37m \x1b[0m\x1b[1m\x1b[36m${("Project SAGOR BOT created by JAHIDUL 卝 SAGOR࿐ツ (https://sagor_islam_all_info.bio.link), please do not sell this source code or claim it as your own. Thank you!")}\x1b[0m`);
 			logColor("#f5ab00", character);
 			global.GoatBot.config.adminBot = adminBot;
 			writeFileSync(global.client.dirConfig, JSON.stringify(global.GoatBot.config, null, 2));
@@ -906,11 +906,11 @@ async function startBot(loginWithEmail) {
 				if (error) {
 					global.responseUptimeCurrent = responseUptimeError;
 					if (
-						error.error == "ArYan Not logged in" ||
-						error.error == "ArYan Not logged in." ||
-						error.error == "ArYan Connection refused: Server unavailable"
+						error.error == "SAGOR Not logged in" ||
+						error.error == "SAGOR Not logged in." ||
+						error.error == "SAGOR Connection refused: Server unavailable"
 					) {
-						log.err("ARYAN NOT LOGGEG IN", getText('login', 'notLoggedIn'), error);
+						log.err("SAGOR NOT LOGGEG IN", getText('login', 'notLoggedIn'), error);
 						global.responseUptimeCurrent = responseUptimeError;
 						global.statusAccountBot = 'can\'t login';
 						if (!isSendNotiErrorMessage) {
@@ -963,7 +963,7 @@ async function startBot(loginWithEmail) {
 					}
 					else {
 						await handlerWhenListenHasError({ api, threadModel, userModel, dashBoardModel, globalModel, threadsData, usersData, dashBoardData, globalData, error });
-						return log.err("ARYAN LISTEN_MQTT", getText('login', 'callBackError'), error);
+						return log.err("SAGOR LISTEN_MQTT", getText('login', 'callBackError'), error);
 					}
 				}
 				global.responseUptimeCurrent = responseUptimeSuccess;
@@ -1114,8 +1114,8 @@ async function startBot(loginWithEmail) {
 			// ———————————————————— RESTART LISTEN ———————————————————— //
 			if (restartListenMqtt.enable == true) {
 				if (restartListenMqtt.logNoti == true) {
-					log.info("ARYAN LISTEN_MQTT", getText('login', 'restartListenMessage', convertTime(restartListenMqtt.timeRestart, true)));
-					log.info("ARYAN BOT_STARTED", getText('login', 'startBotSuccess'));
+					log.info("SAGOR LISTEN_MQTT", getText('login', 'restartListenMessage', convertTime(restartListenMqtt.timeRestart, true)));
+					log.info("SAGOR BOT_STARTED", getText('login', 'startBotSuccess'));
 
 					logColor("#f5ab00", character);
 				}
@@ -1128,10 +1128,10 @@ async function startBot(loginWithEmail) {
 						await stopListening();
 						await sleep(1000);
 						global.GoatBot.Listening = api.listenMqtt(createCallBackListen());
-						log.info("ARYAN LISTEN_MQTT", getText('login', 'restartListenMessage2'));
+						log.info("SAGOR LISTEN_MQTT", getText('login', 'restartListenMessage2'));
 					}
 					catch (e) {
-						log.err("ARYAN LISTEN_MQTT", getText('login', 'restartListenMessageError'), e);
+						log.err("SAGOR LISTEN_MQTT", getText('login', 'restartListenMessageError'), e);
 					}
 				}, restartListenMqtt.timeRestart);
 				global.intervalRestartListenMqtt = restart;
